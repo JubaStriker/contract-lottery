@@ -13,6 +13,8 @@ const web3 = new Web3(provider);
 const deploy = async () => {
   const accounts = await web3.eth.getAccounts();
 
+  accounts.map((account, i) => console.log(`${i + 1}. Account address: ${account}.`))
+
   console.log('Attempting to deploy from account', accounts[0]);
 
   const result = await new web3.eth.Contract(JSON.parse(interface))
